@@ -9,19 +9,9 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:password@localhos
 
 @app.route("/index")
 def index():
-    return render_template("index.html")
-"""
-try:
-    #cur.execute("INSERT INTO usuarios(id, nome, idade) VALUES(1, 'Matheus', 23)")
-    #cur.execute("INSERT INTO usuarios(id, nome, idade) VALUES(2, 'Ana', 23)")
-    consulta()
-    #print("inserção feita com sucesso!")
-    conn.commit()
-    cur.close()
-    conn.close()
-except:
-    print("Erro ao consultar a tabela")
+    dados = consulta()
 
-"""
+    return render_template("index.html", pessoa = dados)
+
 if __name__ == "__main__":
     app.run(debug=True)

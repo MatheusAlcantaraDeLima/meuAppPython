@@ -3,8 +3,8 @@ def consulta():
     cur.execute('SELECT * FROM usuarios')
     dadosBD = cur.fetchall()
     for i in dadosBD:
-        print(i)
-
+        return i
+    
     
     #dados = cur.fetchone()
     #print(dados)
