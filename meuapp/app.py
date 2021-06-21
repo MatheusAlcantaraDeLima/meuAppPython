@@ -7,8 +7,7 @@ from conf import *
 app  = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:password@localhost/teste'
 
-
-@app.route("index")
+@app.route("/")
 def index():
     return render_template("index.html")
 """
