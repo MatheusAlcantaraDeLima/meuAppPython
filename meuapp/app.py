@@ -9,9 +9,10 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:password@localhos
 
 @app.route("/index")
 def index():
-    dados = consulta()
+    cur.execute('SELECT * FROM usuarios')
+    dadosBD = cur.fetchall()
 
-    return render_template("index.html", pessoa = dados)
+    return render_template("index.html", dados = dadosBD)
 
 if __name__ == "__main__":
     app.run(debug=True)

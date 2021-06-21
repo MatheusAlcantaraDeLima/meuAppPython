@@ -8,7 +8,7 @@
     <title>formulário vindo do banco</title>
 </head>
 <body>
-  {%block body%}
+  {%block content%}
     <div class="container">
         <table class="table table-bordered">
             <thead>
@@ -19,11 +19,11 @@
               </tr>
             </thead>
             <tbody>
-              {% for i in pessoa %}
+              {% for i in dados %}
               <tr>
-                <td>{{i.id}}</td>
-                <td>{{i.nome}}</td>
-                <td>{{i.idade}}</td>
+                <td>{{i[0]}}</td>
+                <td>{{i[1]}}</td>
+                <td>{{i[2]}}</td>
               </tr>
               {% endfor %}
             </tbody>
