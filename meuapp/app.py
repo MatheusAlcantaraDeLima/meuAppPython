@@ -5,7 +5,7 @@ from funcoes import *
 from conf import *
 
 app  = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:19971997@localhost/teste'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:password@localhost/teste'
 
 
 @app.route("index")
@@ -25,4 +25,4 @@ except:
 
 """
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
